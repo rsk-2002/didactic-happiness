@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<section class="section-inbox py-5">
+    <h3 class="common-heading text-center">{{message.name}}</h3>
+    <div class="sub-container">
+        <p>Email: {{message.email}}</p>
+        <p>{{message.created|timesince}} ago</p>
+        <p>Email: {{message.subject}}</p>
+        <h4>Message</h4>
+        <p>{{message.message}}</p>
+    </div>
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<section class="section-inbox">
+    <h3 class="common-heading text-center">Inbox ({{unread}})</h3>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Time</th>
+            </tr>
+
+            {% for message in messages %}
+            <tr>
+                <td>{{message.name}}</td>
+                <td>{{message.email}}</td>
+                <td>{{message.subject}}</td>
+                <td>{{message.created|timesince}} ago</td>
+                <td><a href="{% url 'inbox-message' message.id %}">Open in new Tab</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</section>
+
+
+{% endblock content %}

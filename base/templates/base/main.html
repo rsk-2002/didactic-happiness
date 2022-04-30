@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="My portfolio website to showcase the work I have done so far, the services I provide and all my professional life.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Django Portfolio website">
+    <meta name="author" content="Ravi Shanker Kushwaha">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+    <title>Ravi Shanker Kushwaha</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+
+<body>
+    <header class="section-header">
+        <nav class="container">
+            <ul class="navbar-list">
+                <li><a href="{% url 'home' %}" class="navbar-link home-link">Home</a></li>
+                <li><a href="" class="navbar-link projects-link">Projects</a></li>
+                <li><a href="" class="navbar-link skills-link">Skills</a></li>
+                <li><a href="" class="navbar-link contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    <!-- Footer  -->
+
+    <footer>
+        <div class="container flex">
+
+            <div class="mail-div">
+                <!-- <ion-icon name="mail" class="icons"></ion-icon> -->
+                Mail to:
+                <a href="mailto:ravishankerk48@gmail.com">ravishankerk48@gmail.com</a>
+            </div>
+
+            <div class="social">
+                <a href="https://instagram.com/rsk_2002/" target="_blank">
+                    <img src="{% static 'images/logo-instagram.svg' %}" alt="Instagram">
+                    <!-- <ion-icon class="icons" name="logo-instagram"></ion-icon> -->
+                </a>
+                <a href="https://twitter.com/rsk__2002/" target="_blank">
+                    <img src="{% static 'images/logo-twitter.svg' %}" alt="logo-twitter">
+                    <!-- <ion-icon class="icons" name="logo-twitter"></ion-icon> -->
+                </a>
+                <a href="https://github.com/rsk-2002/" target="_blank">
+                    <img src="{% static 'images/logo-github.svg' %}" alt="logo-github">
+                    <!-- <ion-icon class="icons" name="logo-github"></ion-icon> -->
+                </a>
+                <a href="https://linkedin.com/in/rsk2002/" target="_blank">
+                    <img src="{% static 'images/logo-linkedin.svg' %}" alt="logo-linkedin">
+                    <!-- <ion-icon class="icons" name="logo-linkedin"></ion-icon> -->
+                </a>
+            </div>
+            <div class="copyrights">
+                <p>All rights reserved.<a href="https://twitter.com/rsk__2002/" target="_blank">Ravi Shanker
+                        Kushwaha</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- scripts  -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+
+</html>

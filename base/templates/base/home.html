@@ -1,0 +1,105 @@
+{% extends 'base/main.html' %}
+
+{% load static %}
+{% block content %}
+
+<!-- Hero Section -->
+
+<section class="section-hero">
+    <div class="container grid">
+        
+        <div class="img">
+            <img src="{% static 'images/rsk.jpg' %}" alt="Ravi Shanker Kushwaha">
+        </div>
+
+        <div class="detail">
+            <span>Hello, I'm</span>
+            <h1>Ravi<br>Shanker<br>Kushwaha</h1>
+            <p>django dev | python intermediate</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Project Section -->
+
+<section class="section-projects" id="projects">
+
+    <h2 class="text-center common-heading">My Projects</h2>
+    <div class="container grid">
+
+        {% for project in projects %}
+        <div class="project-wrapper">
+            <img src="{{project.thumbnail.url}}" alt="project-image">
+            <h3>{{project.title}}</h3>
+            <a href="{{project.source_code}}" target="_blank" class="source-code">Source code</a> or <a
+                href="{{project.live_link}}" target="_blank">Open Live</a>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+
+<!-- More About Me Section  -->
+
+<section class="section-about">
+
+    <h2 class="text-center common-heading">More About Me</h2>
+
+    <div class="sub-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. tetur adipisicing elit. Debitis, sint cumque
+            fugit recusandae quis quas!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectt. In cum, ullam, eaque vero debitis eveniet,
+            saepe tempore iure qui temporibus id cupiditate maiores ipsa eligendi. Sint corrupti reiciendis earum
+            ea!
+        </p>
+        <br>
+        <a href="#" class="btn">Download CV</a>
+    </div>
+
+</section>
+
+<!-- Skill Section -->
+
+<section class="section-skills" id="skills">
+    <h2 class="text-center common-heading">My Skills</h2>
+
+    <div class="sub-container flex">
+
+        {% for skill in skills %}
+        <span class="skill">{{skill.title}}</span>
+        {% endfor %}
+
+    </div>
+</section>
+
+
+<!-- Contact Form -->
+
+<section class="section-contact" id="contact">
+    <h2 class="text-center common-heading">Contact Form</h2>
+    <div class="sub-container">
+
+        <form action="" method="post" class="flex">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" minlength="3" required placeholder="Your Nice Name">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required placeholder="Your Email">
+
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" minlength="3" required placeholder="Subject">
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</section>
+{% endblock content %}
