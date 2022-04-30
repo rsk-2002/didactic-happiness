@@ -9,7 +9,7 @@
     <div class="container grid">
         
         <div class="img">
-            <img src="{% static 'images/rsk.jpg' %}" alt="Ravi Shanker Kushwaha">
+            <img src="{% static 'media/rsk.jpg' %}" alt="Ravi Shanker Kushwaha">
         </div>
 
         <div class="detail">
@@ -32,7 +32,7 @@
         {% for project in projects %}
         <div class="project-wrapper">
             <img src="{{project.thumbnail.url}}" alt="project-image">
-            <h3>{{project.title}}</h3>
+            <h3>{{project.title|title}}</h3>
             <a href="{{project.source_code}}" target="_blank" class="source-code">Source code</a> or <a
                 href="{{project.live_link}}" target="_blank">Open Live</a>
         </div>

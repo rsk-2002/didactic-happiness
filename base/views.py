@@ -4,8 +4,8 @@ from .forms import MessageForm
 
 # Create your views here.
 def homePage(request):
-    projects = Project.objects.all()
-    skills = Skill.objects.all()
+    projects = Project.objects.filter(is_active=True)
+    skills = Skill.objects.filter(is_active=True)
 
     if request.method == "POST":
         form = MessageForm(request.POST)
