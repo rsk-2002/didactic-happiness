@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'rsk2002.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'rsk2022.herokuapp.com']
 
 
 # Application definition
