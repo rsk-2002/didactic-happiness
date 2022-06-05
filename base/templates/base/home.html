@@ -36,6 +36,8 @@
             <a href="{{project.source_code}}" target="_blank" class="source-code">Source code</a> or <a
                 href="{{project.live_link}}" target="_blank">Open Live</a>
         </div>
+        {% empty %}
+        <p>No projects available in database.</p>
         {% endfor %}
 
     </div>
@@ -71,6 +73,8 @@
 
         {% for skill in skills %}
         <span class="skill">{{skill.title}}</span>
+        {% empty %}
+        <p>Skills not added yet in database.</p>
         {% endfor %}
 
     </div>
